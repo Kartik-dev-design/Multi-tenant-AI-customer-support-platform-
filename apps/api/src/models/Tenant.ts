@@ -9,5 +9,6 @@ const tenantSchema = new Schema(
   { timestamps: true }
 );
 
+
 export type TenantDoc = InferSchemaType<typeof tenantSchema>;
 export const Tenant = model("Tenant", tenantSchema);
