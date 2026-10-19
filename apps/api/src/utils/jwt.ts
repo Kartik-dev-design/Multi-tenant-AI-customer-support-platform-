@@ -8,7 +8,7 @@ export interface AccessPayload {
   tenantId: string;
   role: Role;
 }
-
+// ye jwt.ts file me humne kuch functions banaye hain jisse hum access aur refresh token ko sign aur verify karenge
 export const ACCESS_TTL = "15m";
 export const REFRESH_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
