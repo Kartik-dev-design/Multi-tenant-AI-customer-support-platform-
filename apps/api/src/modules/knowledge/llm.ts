@@ -3,13 +3,13 @@ import { env } from "../../config/env";
 import { AppError } from "../../utils/AppError";
 
 let client: Anthropic | null = null;
-function getClient() {
+export function getAnthropic() {
   if (!env.ANTHROPIC_API_KEY) throw new AppError(503, "ANTHROPIC_API_KEY is not configured");
   return (client ??= new Anthropic({ apiKey: env.ANTHROPIC_API_KEY }));
 }
 
 export async function generate(system: string, user: string, maxTokens = 1000) {
-  const res = await getClient().messages.create({
+  const res = await getAnthropic().messages.create({
     model: env.LLM_MODEL,
     max_tokens: maxTokens,
     system,

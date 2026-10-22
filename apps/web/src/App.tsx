@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router-dom";
+import AgentRuns from "./pages/AgentRuns";
+import Conversations from "./pages/Conversations";
 import DashboardLayout from "./components/DashboardLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Knowledge from "./pages/Knowledge";
 import Login from "./pages/Login";
 import Overview from "./pages/Overview";
 import Placeholder from "./pages/Placeholder";
@@ -14,10 +17,10 @@ export default function App() {
       <Route element={<ProtectedRoute />}>
         <Route element={<DashboardLayout />}>
           <Route index element={<Overview />} />
-          <Route path="conversations" element={<Placeholder title="Conversations" step="Step 3" />} />
-          <Route path="knowledge" element={<Placeholder title="Knowledge base" step="Step 2" />} />
+          <Route path="conversations" element={<Conversations />} />
+          <Route path="knowledge" element={<Knowledge />} />
           <Route path="approvals" element={<Placeholder title="Approvals" step="Step 4" />} />
-          <Route path="agent-runs" element={<Placeholder title="Agent traces" step="Step 3" />} />
+          <Route path="agent-runs" element={<AgentRuns />} />
         </Route>
       </Route>
     </Routes>

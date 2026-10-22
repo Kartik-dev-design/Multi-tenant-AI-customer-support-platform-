@@ -52,3 +52,5 @@ api.interceptors.response.use(
 
 export const errorMessage = (e: unknown) =>
   (e as AxiosError<{ error?: string }>)?.response?.data?.error ?? "Something went wrong";
+
+export const getAccessToken = () => accessToken;
